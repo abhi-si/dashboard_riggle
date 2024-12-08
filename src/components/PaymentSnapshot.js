@@ -28,48 +28,63 @@ const PaymentSnapshot = () => {
               }`}
             >
               <span className="font-bold text-lg">{`Week ${index + 1}`}</span>
-              {expandedWeek === weekKey ? <FiMinus size={20} /> : <FiPlus size={20} />}
+              {expandedWeek === weekKey ? (
+                <FiMinus size={20} />
+              ) : (
+                <FiPlus size={20} />
+              )}
             </div>
 
             {/* Accordion Content */}
             {expandedWeek === weekKey && (
               <div className="p-4 bg-white">
-                <table className="w-full border-collapse text-left">
-                  <thead>
-                    <tr>
-                      <th className="p-3 border-b border-gray-300 font-bold bg-gray-200">Date</th>
-                      <th className="p-3 border-b border-gray-300 font-bold bg-gray-200">
-                        Payment Planned (₹)
-                      </th>
-                      <th className="p-3 border-b border-gray-300 font-bold bg-gray-200">
-                        Payment Received (₹)
-                      </th>
-                      <th className="p-3 border-b border-gray-300 font-bold bg-gray-200">View</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {PAYMENT_SNAPSHOT_DATA[weekKey].map((data, i) => (
-                      <tr key={i} className="even:bg-gray-50">
-                        <td className="p-3 border-b border-gray-300">{data.date}</td>
-                        <td className="p-3 border-b border-gray-300">
-                          {data.paymentPlanned.toLocaleString()}
-                        </td>
-                        <td className="p-3 border-b border-gray-300">
-                          {data.paymentReceived.toLocaleString()}
-                        </td>
-                        <td className="p-3 border-b border-gray-300">
-                          {data.view ? (
-                            
-                              <HiOutlineArrowRightCircle  className=" bg-[#39CEF3] text-white rounded-full " size={18} />
-                            
-                          ) : (
-                            "❌"
-                          )}
-                        </td>
+                <div className="overflow-x-auto">
+                  {" "}
+                  {/* Make the table scrollable on smaller screens */}
+                  <table className="min-w-full border-collapse text-left">
+                    <thead>
+                      <tr>
+                        <th className="p-3 border-b border-gray-300 font-bold bg-gray-200">
+                          Date
+                        </th>
+                        <th className="p-3 border-b border-gray-300 font-bold bg-gray-200">
+                          Payment Planned (₹)
+                        </th>
+                        <th className="p-3 border-b border-gray-300 font-bold bg-gray-200">
+                          Payment Received (₹)
+                        </th>
+                        <th className="p-3 border-b border-gray-300 font-bold bg-gray-200">
+                          View
+                        </th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {PAYMENT_SNAPSHOT_DATA[weekKey].map((data, i) => (
+                        <tr key={i} className="even:bg-gray-50">
+                          <td className="p-3 border-b border-gray-300">
+                            {data.date}
+                          </td>
+                          <td className="p-3 border-b border-gray-300">
+                            {data.paymentPlanned.toLocaleString()}
+                          </td>
+                          <td className="p-3 border-b border-gray-300">
+                            {data.paymentReceived.toLocaleString()}
+                          </td>
+                          <td className="p-3 border-b border-gray-300">
+                            {data.view ? (
+                              <HiOutlineArrowRightCircle
+                                className=" bg-[#39CEF3] text-white rounded-full "
+                                size={18}
+                              />
+                            ) : (
+                              "❌"
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             )}
           </div>
