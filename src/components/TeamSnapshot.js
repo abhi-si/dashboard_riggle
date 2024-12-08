@@ -38,17 +38,15 @@ const TeamSnapshot = () => {
               <div className="flex-1">
                 <div className="flex justify-between items-center">
                   <span className="font-medium text-gray-800 text-sm sm:text-base">
-                    {member.fullName}
-                     ({member.designation})
+                    {member.fullName}({member.designation})
                   </span>
-                  
                 </div>
-                <div className="text-xs sm:text-sm text-gray-600 mt-1 flex justify-between">
-                  <span>Target:{formatNumber(member.target)}</span>
-                  <span>Achieved:{formatNumber(member.achieved)}</span>
+                <div className="text-sm md:text-xs text-gray-600 mt-1 flex justify-between">
+                  <span>Target: {formatNumber(member.target)}</span>
+                  <span>Achieved: {formatNumber(member.achieved)}</span>
                 </div>
               </div>
-              <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-[#907EFF] text-white font-semibold text-xs sm:text-sm">
+              <div className="w-10 h-10 md:w-7 md:h-7 flex items-center justify-center rounded-full bg-[#907EFF] text-white font-semibold text-xs sm:text-sm">
                 {member.percentageAchieved}%
               </div>
             </div>
@@ -76,17 +74,15 @@ const TeamSnapshot = () => {
               <div className="flex-1">
                 <div className="flex justify-between items-center">
                   <span className="font-medium text-gray-800 text-sm sm:text-base">
-                    {member.fullName}
-                    ({member.designation})
+                    {member.fullName}({member.designation})
                   </span>
-                  
                 </div>
-                <div className="text-xs sm:text-sm text-gray-600 mt-1 flex justify-between">
+                <div className="text-sm md:text-xs text-gray-600 mt-1 flex justify-between">
                   <span>Target:{formatNumber(member.target)}</span>
                   <span>Achieved:{formatNumber(member.achieved)}</span>
                 </div>
               </div>
-              <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-[#907EFF] text-white font-semibold text-xs sm:text-sm">
+              <div className="w-10 h-10 md:w-7 md:h-7 flex items-center justify-center rounded-full bg-[#907EFF] text-white font-semibold text-xs sm:text-sm">
                 {member.percentageAchieved}%
               </div>
             </div>
@@ -114,17 +110,15 @@ const TeamSnapshot = () => {
               <div className="flex-1">
                 <div className="flex justify-between items-center">
                   <span className="font-medium text-gray-800 text-sm sm:text-base">
-                    {member.fullName}
-                    ({member.designation})
+                    {member.fullName}({member.designation})
                   </span>
-                  
                 </div>
-                <div className="text-xs sm:text-sm text-gray-600 mt-1 flex justify-between">
+                <div className="text-sm md:text-xs text-gray-600 mt-1 flex justify-between">
                   <span>Target:{formatNumber(member.target)}</span>
                   <span>Achieved:{formatNumber(member.achieved)}</span>
                 </div>
               </div>
-              <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-[#907EFF] text-white font-semibold text-xs sm:text-sm">
+              <div className="w-10 h-10 md:w-7 md:h-7 flex items-center justify-center rounded-full bg-[#907EFF] text-white font-semibold text-xs sm:text-sm">
                 {member.percentageAchieved}%
               </div>
             </div>

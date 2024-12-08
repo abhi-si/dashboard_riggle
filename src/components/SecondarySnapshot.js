@@ -1,8 +1,8 @@
-import React from 'react';
-import { SECONDARY_SNAPSHOT_DATA } from '../Constant';
-import { Doughnut } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from 'chart.js';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+import React from "react";
+import { SECONDARY_SNAPSHOT_DATA } from "../Constant";
+import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 ChartJS.register(ChartDataLabels);
@@ -50,16 +50,19 @@ const SecondarySnapshot = () => {
               datasets: [
                 {
                   data: [item.value, 100 - item.value],
-                  backgroundColor: [item.color, '#E0E0E0'],
-                  hoverBackgroundColor: [item.color, '#E0E0E0'],
+                  backgroundColor: [item.color, "#E0E0E0"],
+                  hoverBackgroundColor: [item.color, "#E0E0E0"],
                 },
               ],
             };
 
             return (
               <div key={index} className="flex flex-col items-center">
-                <Doughnut data={singleDropSizeChartData} className="w-[150px]" />
-                <p className="mt-2 text-gray-600 text-center">{item.range}</p>
+                <Doughnut
+                  data={singleDropSizeChartData}
+                  className="w-[150px]"
+                />
+                {/* <p className="mt-2 text-gray-600 text-center">{item.range}</p> */}
               </div>
             );
           })}

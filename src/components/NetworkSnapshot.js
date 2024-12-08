@@ -1,8 +1,7 @@
 import React from "react";
-import { NETWORK_SNAPSHOT_DATA } from "../Constant"; 
+import { NETWORK_SNAPSHOT_DATA } from "../Constant";
 
 function NetworkSnapshot() {
-  
   const primaryData = NETWORK_SNAPSHOT_DATA[0]; // Data for Primary (Channel Partner)
   const secondaryData = NETWORK_SNAPSHOT_DATA[1]; // Data for Secondary (Retailers)
 
@@ -31,7 +30,7 @@ function NetworkSnapshot() {
       <label className="text-white bg-[#39CEF3] w-[243px] h-[40px] rounded-tl-[5px] flex justify-center items-center absolute left-0">
         NETWORK SNAPSHOT
       </label>
-      <div className="snapshot-container flex gap-6 mt-14">
+      <div className="snapshot-container flex flex-col sm:flex-row gap-6 mt-14">
         {/* Primary (Channel Partner) Section */}
         <div className="snapshot-box flex-1 bg-white p-4 rounded-lg shadow-lg border-[1px] border-[#39CEF3]">
           <h3 className="text-xl font-semibold mb-4">

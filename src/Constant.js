@@ -156,6 +156,46 @@ export const TEAM_SNAPSHOT_DATA = {
   ],
 };
 
+export const LOGIN_SNAPSHOT_DATA = {
+  attendance: 200,
+  live: 70,
+  offline: 130,
+  donutData: [
+    {
+      label: "Before 10:30 AM",
+      value: 40,
+      color: "#1CCAD8",
+    },
+    {
+      label: "9:30-10:00 AM",
+      value: 64,
+      color: "#FDC516",
+    },
+    {
+      label: "10:00-10:30 AM",
+      value: 79,
+      color: "#9B59B6",
+    },
+    {
+      label: "After 10:30 AM",
+      value: 97,
+      color: "#2ECC71",
+    },
+  ],
+  liveOfflineData: [
+    {
+      label: "Live",
+      value: 70,
+      color: "#1CCAD8",
+    },
+    {
+      label: "Offline",
+      value: 130,
+      color: "#FDC516",
+    },
+  ],
+};
+
 export const NETWORK_SNAPSHOT_DATA = [
   {
     name: "Primary (Channel Partner)",

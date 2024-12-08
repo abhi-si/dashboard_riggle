@@ -24,7 +24,6 @@ const SalesSnapshot = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    // No API fetch needed since data is directly imported from Constant.js
     setData(SALES_SNAPSHOT_DATA);
   }, []);
 
@@ -33,39 +32,40 @@ const SalesSnapshot = () => {
   }
 
   const chartData = {
-    labels: data.sales_snapshot.map((item) => item.month.substring(0, 3)), // Get the first 3 letters of the month
+    labels: data.sales_snapshot.map((item) => item.month.substring(0, 3)),
     datasets: [
       {
         label: "Target",
         data: data.sales_snapshot.map((item) => item.target),
-        backgroundColor: "#FC8C4D", // Orange for target
+        backgroundColor: "#FC8C4D",
         borderColor: "#FC8C4D",
         borderWidth: 1,
-        barThickness: 10, // Adjust the bar thickness for better fit
+        barThickness: "flex", // Allow bars to flex for responsive sizing
       },
       {
         label: "Achieved",
         data: data.sales_snapshot.map((item) => item.achieved),
-        backgroundColor: "#39CEF3", // Sky blue for achieved
+        backgroundColor: "#39CEF3",
         borderColor: "#39CEF3",
         borderWidth: 1,
-        barThickness: 10, // Adjust the bar thickness for better fit
+        barThickness: "flex",
       },
     ],
   };
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false, // Allow the chart to resize dynamically
     plugins: {
       title: {
         display: true,
         text: "",
       },
       legend: {
-        display: false, // Hide the legend completely
+        display: false,
       },
       tooltip: {
-        enabled: false, // Disable tooltips to avoid percentage or value display
+        enabled: false,
       },
       datalabels: {
         display: false, // Explicitly disable data labels on the bars
@@ -74,65 +74,56 @@ const SalesSnapshot = () => {
     scales: {
       x: {
         grid: {
-          drawOnChartArea: false, // Hide grid lines
+          drawOnChartArea: false,
         },
       },
       y: {
         grid: {
-          drawOnChartArea: false, // Hide grid lines
+          drawOnChartArea: false,
         },
         ticks: {
-          stepSize: 20, // Set step size for Y axis
+          stepSize: 20,
         },
       },
-    },
-    elements: {
-      line: {
-        borderWidth: 1,
-        borderDash: [5, 5], // Dotted line style
-      },
-    },
-    layout: {
-      padding: 10,
     },
   };
 
   return (
-    <div className="w-full p-6 border-[1px] border-[#39CEF3] overflow-hidden">
-      {/* Labels - Sales Snapshot and Brand */}
-      <div className="flex justify-between mb-4">
-        <label
-          className="text-white bg-[#39CEF3] w-[243px] h-[40px] rounded-tl-[5px] flex justify-center items-center"
-        >
+    <div className="w-full p-4 sm:p-6 border border-[#39CEF3] overflow-hidden">
+      {/* Labels */}
+      <div className="relative flex items-center mb-4">
+        <label className="absolute left-0 text-white bg-[#39CEF3] w-[243px] h-[40px] rounded-tl-[5px] flex justify-center items-center z-10">
           SALES SNAPSHOT
         </label>
-        <label className="text-[#39CEF3] w-[243px] h-[40px] rounded-tl-[5px] flex justify-center items-center">
+        <label className="ml-auto text-[#39CEF3] border-[1px] border-[#39CEF3] w-[243px] h-[40px] flex justify-center items-center ">
           Brand
         </label>
       </div>
 
-      {/* Wrapper Box for Bar Graph and Color Icons */}
-      <div className="relative border-[1px] border-[#39CEF3] bg-white p-6 rounded-lg w-1/2">
-        {/* Color Icons Box */}
-        <div className="absolute top-2 right-2 z-20 flex flex-col gap-2 p-3">
+      {/* Wrapper Box */}
+      <div className="relative border border-[#39CEF3] bg-white p-4 sm:p-6 rounded-lg w-full sm:w-3/4 lg:w-1/2  h-auto sm:h-[300px] lg:h-[250px] overflow-hidden left-0">
+        {/* Color Icons */}
+        <div className="absolute top-2 right-2 z-20 flex flex-col gap-2">
           <div className="flex items-center gap-1">
             <span
               className="w-[15px] h-[15px] rounded-full"
-              style={{ backgroundColor: "#FC8C4D" }} // Target color
+              style={{ backgroundColor: "#FC8C4D" }}
             ></span>
             <span className="text-xs font-semibold">Target</span>
           </div>
           <div className="flex items-center gap-1">
             <span
               className="w-[15px] h-[15px] rounded-full"
-              style={{ backgroundColor: "#39CEF3" }} // Achieved color
+              style={{ backgroundColor: "#39CEF3" }}
             ></span>
             <span className="text-xs font-semibold">Achieved</span>
           </div>
         </div>
 
         {/* Bar Chart */}
-        <Bar data={chartData} options={options} />
+        <div className="w-full h-full max-h-[200px] sm:max-h-[250px] lg:max-h-[200px] overflow-hidden">
+          <Bar data={chartData} options={options} />
+        </div>
       </div>
     </div>
   );
