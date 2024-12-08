@@ -236,7 +236,7 @@ export const INSIGHTS_SNAPSHOT_DATA = {
       name: "CocaCola",
       count: 700,
       value: 7000,
-      imageSrc: "/cocacola_icon.png",
+      imageSrc: "/cococola_icon.png",
     },
     {
       rank: 4,
