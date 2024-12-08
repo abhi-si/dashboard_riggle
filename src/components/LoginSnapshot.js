@@ -35,18 +35,21 @@ const LoginSnapshot = () => {
 
   return (
     <div className="p-4 sm:p-6 border-[1px] border-[#39CEF3] shadow-md relative">
-      <div className="flex justify-between mb-8">
-        <label className="text-white bg-[#39CEF3] w-full sm:w-[243px] h-[40px] rounded-tl-[5px] flex justify-center items-center absolute left-0 top-0 mt-3">
+      {/* Flex container for Login Snapshot and Today labels */}
+      <div className="flex justify-between mb-8 sm:mb-0">
+        {/* LOGIN SNAPSHOT Label */}
+        <label className="text-white bg-[#39CEF3] w-full sm:w-[243px] h-[40px] rounded-tl-[5px] flex justify-center items-center mt-3 sm:relative sm:mt-0">
           LOGIN SNAPSHOT
         </label>
-        <div className="text-white bg-[#39CEF3] w-full sm:w-[243px] h-[40px] rounded-tr-[5px] flex justify-center items-center absolute right-0 top-0 mt-3">
+        {/* Today Label */}
+        <div className="text-white bg-[#39CEF3] w-full sm:w-[243px] h-[40px] rounded-tr-[5px] flex justify-center items-center mt-3 sm:relative sm:mt-0">
           Today
         </div>
       </div>
 
-      <div className="flex justify-between mt-12 gap-4 h-[250px]">
+      <div className="flex flex-col sm:flex-row sm:justify-between mt-12 gap-4 h-[auto] sm:h-[250px]">
         {/* First Child: Live and Offline Bar Chart */}
-        <div className="w-full md:w-1/4 flex flex-col items-center border-[1px] border-[#39CEF3] h-full p-4">
+        <div className="w-full sm:w-1/2 flex flex-col items-center border-[1px] border-[#39CEF3] h-full p-4">
           <h1 className="mb-4 font-bold text-4xl text-gray-600">
             {data.attendance}
           </h1>
@@ -82,7 +85,7 @@ const LoginSnapshot = () => {
         </div>
 
         {/* Second Child: 4 Doughnut Charts for Time Stamps */}
-        <div className="w-full md:w-3/4 grid grid-cols-2 sm:grid-cols-4 gap-4 border-[1px] border-[#39CEF3] p-4 h-full">
+        <div className="w-full sm:w-1/2 grid grid-cols-2 gap-4 sm:grid-cols-4 border-[1px] border-[#39CEF3] p-4 h-full">
           {donutChartData.map((chartData, index) => (
             <div key={index} className="flex flex-col items-center">
               <Doughnut data={chartData} className="w-[150px]" />

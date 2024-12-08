@@ -89,19 +89,19 @@ const SalesSnapshot = () => {
   };
 
   return (
-    <div className="w-full p-4 sm:p-6 border border-[#39CEF3] overflow-hidden">
+    <div className="w-full p-4 sm:p-6 border border-[#39CEF3] overflow-hidden mt-[60px]">
       {/* Labels */}
-      <div className="relative flex items-center mb-4">
-        <label className="absolute left-0 text-white bg-[#39CEF3] w-[243px] h-[40px] rounded-tl-[5px] flex justify-center items-center z-10">
+      <div className="relative flex flex-wrap items-center mb-4">
+        <label className="text-white bg-[#39CEF3] w-auto px-4 py-2 rounded-tl-[5px] flex justify-center items-center z-10 mb-2 sm:mb-0">
           SALES SNAPSHOT
         </label>
-        <label className="ml-auto text-[#39CEF3] border-[1px] border-[#39CEF3] w-[243px] h-[40px] flex justify-center items-center ">
+        <label className="ml-auto text-[#39CEF3] border-[1px] border-[#39CEF3] w-auto px-4 py-2 flex justify-center items-center">
           Brand
         </label>
       </div>
 
       {/* Wrapper Box */}
-      <div className="relative border border-[#39CEF3] bg-white p-4 sm:p-6 rounded-lg w-full sm:w-3/4 lg:w-1/2  h-auto sm:h-[300px] lg:h-[250px] overflow-hidden left-0">
+      <div className="relative border border-[#39CEF3] bg-white p-4 sm:p-6 rounded-lg w-full sm:w-3/4 lg:w-1/2 h-auto sm:h-[300px] lg:h-[250px] overflow-hidden left-0">
         {/* Color Icons */}
         <div className="absolute top-2 right-2 z-20 flex flex-col gap-2">
           <div className="flex items-center gap-1">

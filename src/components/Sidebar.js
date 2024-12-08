@@ -11,15 +11,17 @@ const Sidebar = () => {
   return (
     <div>
       {/* Sidebar for larger screens */}
-      <div className="hidden lg:block w-64 h-screen p-6 shadow-2xl mt-3 rounded-tr-xl rounded-br-xl bg-white">
-        <ul className="space-y-4">
+      <div className="hidden lg:block w-64 h-screen p-6 shadow-2xl bg-white mt-12">
+        <ul className="space-y-6">
           <li className="font-bold text-blue-600 hover:text-blue-800 cursor-pointer">
             Dashboard
           </li>
           <li className="hover:text-blue-800 cursor-pointer">Brands</li>
           <li className="hover:text-blue-800 cursor-pointer">Sales Person</li>
           <li className="hover:text-blue-800 cursor-pointer">Target</li>
-          <li className="hover:text-blue-800 cursor-pointer">Channel Partners</li>
+          <li className="hover:text-blue-800 cursor-pointer">
+            Channel Partners
+          </li>
         </ul>
       </div>
 
@@ -28,6 +30,7 @@ const Sidebar = () => {
         <button
           onClick={toggleSidebar}
           className="text-2xl text-blue-600"
+          aria-label="Toggle Sidebar"
         >
           <FiMenu />
         </button>
@@ -35,20 +38,30 @@ const Sidebar = () => {
 
       {/* Sidebar for mobile */}
       <div
-        className={`lg:hidden fixed top-0 left-0 w-64 h-screen p-6 shadow-2xl mt-3 rounded-tr-xl rounded-br-xl bg-white transform ${
+        className={`lg:hidden fixed top-12 left-0 w-64 h-screen p-6 shadow-2xl bg-white transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300`}
+        } transition-transform duration-300 z-40`}
       >
-        <ul className="space-y-4">
+        <ul className="space-y-6">
           <li className="font-bold text-blue-600 hover:text-blue-800 cursor-pointer">
             Dashboard
           </li>
           <li className="hover:text-blue-800 cursor-pointer">Brands</li>
           <li className="hover:text-blue-800 cursor-pointer">Sales Person</li>
           <li className="hover:text-blue-800 cursor-pointer">Target</li>
-          <li className="hover:text-blue-800 cursor-pointer">Channel Partners</li>
+          <li className="hover:text-blue-800 cursor-pointer">
+            Channel Partners
+          </li>
         </ul>
       </div>
+
+      {/* Overlay to close sidebar */}
+      {isSidebarOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+          onClick={toggleSidebar}
+        ></div>
+      )}
     </div>
   );
 };
