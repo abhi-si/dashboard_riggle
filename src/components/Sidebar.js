@@ -18,7 +18,7 @@ const Sidebar = () => {
       {/* Sidebar for larger screens */}
       <div>
         {/* Sidebar for larger screens */}
-        <div className="hidden lg:block w-64 h-screen p-6 shadow-2xl bg-white mt-12">
+        <div className="hidden lg:block w-64 h-screen p-6 shadow-2xl bg-white mt-14">
           <ul className="space-y-6">
             <li className="font-bold text-blue-600 hover:text-blue-800 cursor-pointer flex items-center space-x-2">
               <MdOutlineDashboard />

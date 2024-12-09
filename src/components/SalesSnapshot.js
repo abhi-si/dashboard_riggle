@@ -89,7 +89,7 @@ const SalesSnapshot = () => {
   };
 
   return (
-    <div className="w-full p-4 sm:p-6 border border-[#39CEF3] overflow-hidden mt-[60px]">
+    <div className="w-full p-4 sm:p-6 border border-[#39CEF3] overflow-hidden ">
       {/* Labels */}
       <div className="relative flex flex-wrap items-center mb-4">
         <label className="text-white bg-[#39CEF3] w-auto px-4 py-2 rounded-tl-[5px] flex justify-center items-center z-10 mb-2 sm:mb-0">

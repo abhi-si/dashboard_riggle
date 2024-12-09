@@ -11,6 +11,7 @@ import SecondarySnapshot from "./SecondarySnapshot";
 import SecondaryCoverage from "./SecondaryCoverage";
 import Gap2Analysis from "./Gap2Analysis";
 import PaymentSnapshot from "./PaymentSnapshot";
+import ResponsiveReport from "./ResponsiveReport";
 
 function Body() {
   return (
@@ -23,8 +24,10 @@ function Body() {
 
         {/* Main content area */}
         <div className="flex flex-col w-full p-4 sm:p-6 mt-4 sm:mt-6 gap-4 sm:gap-6">
+          {/* <ResponsiveReport /> */}
           {/* Updated each snapshot container */}
           {[
+            ResponsiveReport, 
             SalesSnapshot,
             TeamSnapshot,
             LoginSnapshot,
